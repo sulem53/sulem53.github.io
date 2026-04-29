@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7GT8BY6CC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K7GT8BY6CC');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SULEM.SYS // Portfolio OS</title>
-  <meta name="description" content="Sulem Shaikh — BCA 2nd Year Student, Code Architect, Problem Solver. Portfolio mission control interface." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Basic SEO -->
+  <title>Sulem Shaikh | SULEM.SYS // Portfolio OS</title>
+  <meta name="description" content="Portfolio showcasing my projects, skills, and journey as a BCA student passionate about web development and problem-solving. Features include a terminal-inspired UI, interactive projects, and my resume." />
   <meta name="author" content="Sulem Shaikh" />
+  <meta name="keywords" content="Sulem Shaikh, BCA student, web developer, portfolio, programmer, Ahmedabad, SVGU University, Chimanbhai Institute" />
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sulem53.github.io/" />
+  <meta property="og:title" content="Sulem Shaikh | SULEM.SYS // Portfolio OS" />
+  <meta property="og:description" content="Portfolio showcasing my projects, skills, and journey as a BCA student passionate about web development and problem-solving. Features include a terminal-inspired UI, interactive projects, and my resume." />
+  <meta property="og:image" content="https://sulem53.github.io/opengraph.png" />
+  <meta property="og:site_name" content="Sulem Shaikh Portfolio" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://sulem53.github.io/" />
+  <meta name="twitter:title" content="Sulem Shaikh | SULEM.SYS // Portfolio OS" />
+  <meta name="twitter:description" content="Portfolio showcasing my projects, skills, and journey as a BCA student passionate about web development and problem-solving. Features include a terminal-inspired UI, interactive projects, and my resume." />
+  <meta name="twitter:image" content="https://sulem53.github.io/opengraph.png" />
+
+  <!-- Favicon (Uncomment and add the files to your project root) -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
@@ -969,6 +1002,12 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .scroll-indicator.hidden {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+      pointer-events: none;
     }
     .scroll-indicator span {
       font-size: 0.65rem;
@@ -2017,6 +2056,22 @@
     }
 
     setTimeout(typeLine, 2000);
+  })();
+
+  /* ================================================
+     SCROLL INDICATOR ANIMATION
+  ================================================ */
+  (function() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (!scrollIndicator) return;
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollIndicator.classList.add('hidden');
+      } else if (window.scrollY < 50) {
+        scrollIndicator.classList.remove('hidden');
+      }
+    });
   })();
   </script>
 </body>
